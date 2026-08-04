@@ -381,7 +381,7 @@ export function WaterComparison() {
       context.fillStyle = skilled ? "rgba(232, 255, 245, 0.74)" : "rgba(255, 255, 255, 0.62)";
       context.font = "600 10px ui-monospace, SFMono-Regular, Menlo, monospace";
       context.letterSpacing = "1px";
-      context.fillText(skilled ? "SKILLED WATER / LIVE" : "ONE-SHOT WATER / LIVE", 18, height - 18);
+      context.fillText(skilled ? "CRAFTED WATER / LIVE" : "BASIC WATER / LIVE", 18, height - 18);
 
       frame = requestAnimationFrame(render);
     };
@@ -405,8 +405,8 @@ export function WaterComparison() {
     <section className="demo-section" aria-labelledby="demo-title">
       <div className="demo-topline">
         <div>
-          <span className="eyebrow">LIVE A/B DEMO</span>
-          <h2 id="demo-title">Same boat. Better water.</h2>
+          <span className="eyebrow">LIVE COMPARISON</span>
+          <h2 id="demo-title">Basic / crafted</h2>
         </div>
         <p>Use WASD, arrow keys, or drag across the water.</p>
       </div>
@@ -419,7 +419,7 @@ export function WaterComparison() {
             aria-pressed={mode === "baseline"}
             onClick={() => chooseMode("baseline")}
           >
-            <span>01</span> ONE-SHOT
+            <span>01</span> BASIC PASS
           </button>
           <button
             type="button"
@@ -427,7 +427,7 @@ export function WaterComparison() {
             aria-pressed={mode === "skilled"}
             onClick={() => chooseMode("skilled")}
           >
-            <span>02</span> WITH SKILL
+            <span>02</span> CRAFTED PASS
           </button>
         </div>
         <div className={`canvas-shell ${mode}`}>
@@ -435,12 +435,12 @@ export function WaterComparison() {
             ref={canvasRef}
             className="water-canvas"
             tabIndex={0}
-            aria-label={`${mode === "baseline" ? "One-shot" : "Skilled"} animated water demo with a controllable boat`}
+            aria-label={`${mode === "baseline" ? "Basic" : "Crafted"} animated water demo with a controllable boat`}
           />
           <div className="canvas-corner">PRESS B TO FLIP</div>
         </div>
         <div className="demo-readout" aria-live="polite">
-          <strong>{mode === "baseline" ? "Typical first result" : "Compressed craft"}</strong>
+          <strong>{mode === "baseline" ? "Basic implementation" : "Crafted implementation"}</strong>
           <div>
             {notes.map((note) => (
               <span key={note}>{note}</span>

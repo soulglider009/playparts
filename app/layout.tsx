@@ -25,21 +25,21 @@ export async function generateMetadata(): Promise<Metadata> {
   const imageUrl = `${protocol}://${host}/og.png`;
 
   return {
-    title: "Playparts — The hard parts, already solved",
+    title: "Playparts — Small parts. Better games.",
     description:
-      "Verified AI game-making skills, proven with instant playable before-and-after demos.",
+      "Useful, reusable skills for making web games with AI.",
     openGraph: {
-      title: "Playparts — The hard parts, already solved",
+      title: "Playparts — Small parts. Better games.",
       description:
-        "Verified AI game-making skills, proven with instant playable before-and-after demos.",
+        "Useful, reusable skills for making web games with AI.",
       type: "website",
       images: [{ url: imageUrl, width: 1731, height: 909 }],
     },
     twitter: {
       card: "summary_large_image",
-      title: "Playparts — The hard parts, already solved",
+      title: "Playparts — Small parts. Better games.",
       description:
-        "Verified AI game-making skills, proven with instant playable before-and-after demos.",
+        "Useful, reusable skills for making web games with AI.",
       images: [imageUrl],
     },
   };
