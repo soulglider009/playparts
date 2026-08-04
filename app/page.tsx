@@ -13,14 +13,9 @@ export default function Home() {
     <main>
       <SiteHeader />
 
-      <section className="catalog-intro">
-        <h1>Small parts.<br />Better games.</h1>
-        <p>Useful, reusable skills for making web games with AI.</p>
-      </section>
-
-      <section className="browser" aria-labelledby="skills-heading">
-        <div className="browser-bar">
-          <h2 id="skills-heading">Skills</h2>
+      <section className="browser catalog-browser" aria-labelledby="skills-heading">
+        <div className="browser-bar catalog-titlebar">
+          <h1 id="skills-heading">Skills for making AI web games more easily</h1>
           <div className="filter-row" aria-label="Skill filters">
             <span className="filter-active">All</span>
             <span>Visual</span>
@@ -28,7 +23,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="skill-grid">
+        <div className="catalog-grid">
           <Link className="skill-card skill-card-water" href="/skills/good-water">
             <div className="card-visual water-card-visual" aria-hidden="true">
               <span className="water-line water-line-one" />
@@ -46,11 +41,26 @@ export default function Home() {
             </div>
           </Link>
 
+          {wantedParts.map((part) => (
+            <article className="skill-card wanted-card" key={part.name}>
+              <div className={`card-visual wanted-visual ${part.look}`} aria-hidden="true">
+                <span />
+                <i />
+              </div>
+              <div className="card-caption">
+                <div>
+                  <span className="card-type">{part.type}</span>
+                  <h3>{part.name}</h3>
+                </div>
+              </div>
+            </article>
+          ))}
+
           <a
             className="skill-card submit-card"
             href="https://github.com/soulglider009/playparts"
           >
-            <div className="submit-mark" aria-hidden="true">+</div>
+            <div className="card-visual submit-mark" aria-hidden="true">+</div>
             <div className="card-caption">
               <div>
                 <span className="card-type">OPEN SOURCE</span>
@@ -59,27 +69,6 @@ export default function Home() {
               <span className="card-arrow" aria-hidden="true">↗</span>
             </div>
           </a>
-        </div>
-      </section>
-
-      <section className="wanted-section" aria-labelledby="wanted-heading">
-        <div className="browser-bar compact-bar">
-          <h2 id="wanted-heading">Wanted parts</h2>
-          <span className="tiny-label">WHAT SHOULD EXIST NEXT</span>
-        </div>
-        <div className="wanted-grid">
-          {wantedParts.map((part) => (
-            <article className="wanted-card" key={part.name}>
-              <div className={`wanted-visual ${part.look}`} aria-hidden="true">
-                <span />
-                <i />
-              </div>
-              <div className="wanted-caption">
-                <h3>{part.name}</h3>
-                <span>{part.type}</span>
-              </div>
-            </article>
-          ))}
         </div>
       </section>
 

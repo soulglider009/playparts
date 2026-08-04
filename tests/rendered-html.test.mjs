@@ -29,8 +29,8 @@ test("server-renders the Playparts skill browser", async () => {
 
   const html = await response.text();
   assert.match(html, /<title>Playparts/);
-  assert.match(html, /Small parts/);
-  assert.match(html, /Wanted parts/);
+  assert.match(html, /Skills for making AI web games more easily/);
+  assert.match(html, /NEXT BUILD/);
   assert.match(html, /Submit a part/);
   assert.match(html, /good-water/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape/);
