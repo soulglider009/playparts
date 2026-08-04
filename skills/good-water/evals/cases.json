@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "skill": "good-water",
+  "status": "prototype",
+  "baselinePrompt": "Add animated water and a controllable boat to this 2D web game. Make the water look good.",
+  "cases": [
+    {
+      "id": "top-down-boat",
+      "fixture": "playparts-water-demo",
+      "goal": "Improve a top-down body of water while preserving the existing boat and controls.",
+      "hardGates": [
+        "project builds",
+        "no fatal console errors",
+        "boat remains controllable",
+        "animation remains bounded",
+        "layout survives resize"
+      ],
+      "qualityChecks": [
+        "water has readable depth at game scale",
+        "at least two motion scales do not synchronize",
+        "moving boat produces a directional wake",
+        "highlights do not obscure the boat",
+        "finished result is visibly preferable to the captured baseline"
+      ]
+    }
+  ],
+  "verification": {
+    "claimed": false,
+    "note": "A verified-useful badge requires controlled no-skill and with-skill runs on multiple fixtures."
+  }
+}
